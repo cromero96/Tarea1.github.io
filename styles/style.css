@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2? family= Nunito & display=swap');
+body{
+    background-color: white;
+}
+
+.navbar{
+    width: 80%;
+    margin: auto;
+    padding: 5px 0;
+    font-weight: bold;
+    /*Permite diseñar disposicón responsiva*/
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo{
+    width: 120px;
+    cursor: pointer;
+}
+
+.navbar ul li{
+    list-style: none;
+    /*Usamos inline block para mostrar los elementos de forma horizontal, permite definir un ancho y alto, se respetan los margenes superiores e
+    inferiores, no hace salto un de linea entre cada elemento*/
+    display: inline-block;
+    margin: 0 20px;
+    /**/
+    position: relative;
+}
+
+.navbar ul li a{
+    /*Quita el subrayado del enlace*/
+    text-decoration: none;
+    color: black;
+    /*Cambia el texto a mayuscula*/
+    text-transform: uppercase;
+}
+
+/*::after permite insertar algo despues de un elemento*/
+.navbar ul li::after{
+    content: "";
+    height: 3px;
+    width: 0;
+    background: #009688;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.5s;
+}
+
+.navbar ul li:hover::after{
+    width: 100%;
+}
+
+.navbar ul li:hover{
+    text-shadow: 0 0 20px #009688;
+    transition: 0.5s;
+}
+
+div{
+    margin-left: 35%;
+}
+
+/*Index*/
+
+/*Menu*/
+
+/*Nosotros*/
+.container{
+    margin-top: -20px;
+    width: 180px;
+    margin-left: 130px;
+    position: relative;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.container .card{
+    position: relative;
+    cursor: pointer;
+}
+
+.container .card .face{
+    width: 400px;
+    height: 200px;
+    transition: 0.5s;
+}
+
+.container .card .face.face1{
+    position: relative;
+    background: #333;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+    transform: translateY(100px);
+}
+
+.container .card:hover .face.face1{
+    background: #ff0057;
+    transform: translateY(0);
+}
+
+.container .card .face.face1 .content{
+    opacity: 0.5;
+    transition: 0.5s;
+}
+
+.container .card:hover .face.face1 .content{
+    opacity: 1;
+}
+
+.container .card .face.face1 .content img{
+    margin-top: 20px;
+    max-width: 120px;
+    margin-left: -100px;
+}
+
+.container .card .face.face1 .content h3{
+    margin: 10px 0 0;
+    padding: 0;
+    color: white;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.container .card .face.face2{
+    position: relative;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    transform: translateY(-100px);
+}
+
+.container .card:hover .face.face2{
+    transform: translateY(0);
+}
+
+.container .card .face.face2 .content p{
+    margin-left: -100px;
+    padding: 0;
+}
+
+.container .card .face.face2 .content a{
+    margin: 15px 0 0;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 900;
+    color: #333;
+    padding: 5px;
+    border: 1px solid #333;
+}
+
+.container .card .face.face2 .content a:hover{
+    background: #333;
+    color: #fff;
+}
+
+div .infNosotros{
+    text-align: right;
+}
+#nosotros{
+    margin-top: -240px;
+    margin-left: auto;
+    width: 430px;
+    cursor: pointer;
+}
+
+/*Contacto*/
+.opinion{
+    width: 580px;
+    height: 480px;
+    background: rgba(0, 0, 0, .8);
+    border-radius: 10px;
+    color: white;
+    top: 63%;
+    left: 15%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 10px 30px;
+}
+.opinion h1{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.opinion input{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.opinion input[type="submit"]{
+    width: 50%;
+}
+
+.opinion input[type="text"],
+.opinion input[type="email"],
+.opinion input[type="tel"],
+.opinion textarea{
+    border: none;
+    border-bottom: 1px solid white;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: white;
+    font-size: 16px;
+}
+
+#accordionExample{
+    margin-top: 550px;
+    margin-left: -150px;
+    width: 90%;
+}
+
+.button{
+    position: relative;
+    width: 70px;
+    height: 30px;
+    font-size: 10px;
+    background-color: #ff0057;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: width .5s;
+    border-radius: .5s;
+}
+
+.button *{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity .25s;
+}
+
+.icon{
+    opacity: 0;
+}
+
+.button:focus{
+    width: 30px;
+    background-color: #44c08a;
+    border-radius: 50%;
+}
+
+.button:focus .text{
+    opacity: 0;
+}
+
+.button:focus .icon{
+    opacity: 1;
+    transition-delay: .5s;
+}
+
+/*Footer*/
+footer{
+    background: rgba(0, 0, 0, .8);
+    color: white;
+}
+footer ul{
+    padding:0;
+}
+footer li{
+    list-style: none;
+}
+.wrap-footer{
+    display: grid;
+    grid-template-columns: 25% 20% 20% 20%;
+    column-gap: 2%;
+    padding: 1rem;
+    margin: 2rem auto;
+    max-width: 100%;
+}
+.logo-element_footer{
+    display: flex;
+    margin: 2rem 0;
+}
+.logo-element_footer img{
+    max-height: 75px;
+}
+.element-footer h5{
+    margin: 1rem 0;
+}
+
+.text-element-footer li{
+    line-height: 2;
+}
+
+.link-elements-footer li a{
+    color:#FFC300;
+}
+
+.rrss-element-footer ul{
+    display: flex;
+    flex-flow: wrap;
+}
+
+.rrss-element-footer img{
+    width: 35px;
+}
+
+.rrss-element-footer li{
+    margin-right: 1rem;
+}
+
+.footer-creds{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+    color: white;
+    font-size: .9rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.legal-creds ul{
+    display: flex;
+    flex-flow: row;
+}
+
+.legal-creds ul li{
+    padding-right: 1rem;
+}
+.legal-creds ul a{
+    color: white;
+    font-size: .9rem;
+}
+
+@media (max-width:768px){
+    .wrap-footer{
+    grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media (max-width:480px){
+    .wrap-footer{
+    grid-template-columns: repeat(1,1fr);
+    }
+}
+
+@media (max-width:320px){
+    .footer-creds{
+    flex-flow: column;
+    }
+}
